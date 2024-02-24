@@ -1,0 +1,10 @@
+###
+GET http://localhost:4004
+
+###
+GET http://localhost:4004/developerChellange/v2/admin/$metadata
+Authorization: mocked alice
+
+###
+GET http://localhost:4004/odata/v4/admin/$metadata
+Authorization: Basic satya@sposea.com:
