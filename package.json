@@ -7,8 +7,11 @@
   "private": true,
   "dependencies": {
     "@cap-js-community/odata-v2-adapter": "^1.12.3",
+    "@cap-js/audit-logging": "^0.6.0",
     "@cap-js/change-tracking": "^1.0.5",
     "@cap-js/graphql": "^0.10.0",
+    "@cap-js/notifications": "^0.1.0",
+    "@cap-js/telemetry": "^0.0.4",
     "@sap/cds": "^7",
     "express": "^4"
   },
@@ -25,10 +28,19 @@
     }
   },
   "requirs": {
+    "audit-log": true,
     "auth": {
       "kind": "mocked",
       "users": {
-        "satya@sposea.com": { "tenant": "t1", "roles": [ "cds.Subscriber", "admin" ] }
+        "[development]": {
+          "Satya": {
+            "tenant": "t1",
+            "roles": [
+              "admin",
+              "cds.Subscriber"
+            ]
+          }
+        }
       }
     }
   }

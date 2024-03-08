@@ -3,8 +3,43 @@ GET http://localhost:4004
 
 ###
 GET http://localhost:4004/developerChellange/v2/admin/$metadata
-Authorization: mocked alice
+Authorization: Basic alice:
 
 ###
 GET http://localhost:4004/odata/v4/admin/$metadata
-Authorization: Basic satya@sposea.com:
+Authorization: Basic Satya:
+
+###
+GET http://localhost:4004/odata/v4/admin/$metadata
+Authorization: Basic alice:
+
+###
+GET http://localhost:4004/odata/v4/admin/Authors
+Authorization: Basic alice:
+
+###
+
+GET http://localhost:4004/odata/v4/admin/ListOfBooks
+Authorization: Basic alice:
+
+###
+GET http://localhost:4004/graphql/
+Authorization: Basic alice:
+
+query myQuery {
+  CatalogService {
+    ListOfBooks {
+      nodes {
+        ID
+        author
+        stock
+      }
+    }
+  }
+  
+}
+
+###
+GET http://localhost:4004/odata/v4/catalog/ListOfBooks(201)
+Authorization: Basic alice:
+
